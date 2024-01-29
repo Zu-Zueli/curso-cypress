@@ -4,11 +4,11 @@ import { LoginElements } from "./login.elements";
 export class LoginMethods {
     //Método para insertar un nombre de usuario
      static insertUsername(username){
-        LoginElements.input.username.type(username)
+        LoginElements.input.username.invoke("val", username)
      }
      //Método para insertar una contraseña de usuario
      static insertPassword(password){
-        LoginElements.input.password.type(password)
+        LoginElements.input.password.invoke("val", password)
      }
      //Método para hacer click en el botón de login
      static clickOnLoginButton(){
