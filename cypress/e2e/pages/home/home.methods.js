@@ -1,7 +1,6 @@
 import { HomeElements } from "./home.elements";
 
 export class HomeMethods{
-
     static clickOnPhonesOption(){
         HomeElements.categoriesMenu.phones.click()
     }

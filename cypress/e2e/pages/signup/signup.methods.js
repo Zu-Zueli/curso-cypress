@@ -1,7 +1,6 @@
 import { SignupElements } from "./signup.elements";
 
 export class SignupMethods {
-    
     static insertUsername(username){
         SignupElements.inputs.username.invoke("val", username)
     }
@@ -11,7 +10,6 @@ export class SignupMethods {
     static clickOnSignupButton(){
         SignupElements.buttons.signup.click()
     }
-
     static signup(username, password){
         this.insertUsername(username)
         this.insertPassword(password)
