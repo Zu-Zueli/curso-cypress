@@ -1,5 +1,5 @@
 export class LoginElements {
-    static get input(){
+    static get inputs(){
         return {
             get username(){
                 return cy.get('input#loginusername')
