@@ -1,4 +1,4 @@
-import { Logger } from "../../util/logger";
+import { Logger } from "../../useful/logger";
 import { LoginElements } from "./login.elements";
 
 //Clase LoginMethods: para clasificar todas las acciones posibles en la pagina de login
