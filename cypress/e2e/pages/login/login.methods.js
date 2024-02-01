@@ -1,3 +1,4 @@
+import { Logger } from "../../util/logger";
 import { LoginElements } from "./login.elements";
 
 //Clase LoginMethods: para clasificar todas las acciones posibles en la pagina de login
@@ -16,8 +17,11 @@ export class LoginMethods {
      }
      //Metodo completo para loguearse
      static login(username, password){
+        Logger.subStep("Insert username")
         this.insertUsername(username)
+        Logger.subStep("Insert password")
         this.insertPassword(password)
+        Logger.subStep("Click on Login button")
         this.clickOnLoginButton()
      }
 }
