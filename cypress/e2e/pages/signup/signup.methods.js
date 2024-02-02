@@ -16,8 +16,10 @@ export class SignupMethods {
         this.insertPassword(password)
         this.clickOnSignupButton()
     }
-
     static verifySignupSuccesfulMessageIsDisplayed(){
         CommonPageMethods.verifyAlert("Sign up successful.")
+    }
+    static VerifySignupFailedMessageIsDisplayed(){
+        CommonPageMethods.verifyAlert("This user already exist.")
     }
 }
