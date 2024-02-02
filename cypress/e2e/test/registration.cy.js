@@ -1,15 +1,14 @@
 import { CommonPageData } from "../pages/common-page/common.page.data"
 import { CommonPageMethods } from "../pages/common-page/common.page.methods"
+import { LoginData } from "../pages/login/login.data";
 import { SignupMethods } from "../pages/signup/signup.methods"
 import { Logger } from "../useful/logger"
 const user = CommonPageMethods.generateRandomString();
 const password = CommonPageMethods.generateRandomString(7);
-const existingUser = "random01";
 
 describe(CommonPageData.testSuites.registration, ()=>{
 
     it("Valid user registration", ()=>{
-        
         Logger.stepAndDescription(1, "Navigate to the Home page")
         CommonPageMethods.navigateToDemoBlaze()
         
@@ -29,7 +28,6 @@ describe(CommonPageData.testSuites.registration, ()=>{
 
 
     it("Invalid User Registration", ()=>{
-
         Logger.stepAndDescription(1, "Navigate to the home page")
         CommonPageMethods.navigateToDemoBlaze()
         
@@ -37,7 +35,7 @@ describe(CommonPageData.testSuites.registration, ()=>{
         CommonPageMethods.clickOnSignUpOption()
 
         Logger.stepAndDescription(3, "Fill in some fields with invalid information")
-        SignupMethods.insertUsername(existingUser)
+        SignupMethods.insertUsername(LoginData.validCredentials.username)
         SignupMethods.insertPassword(password)
 
         Logger.stepAndDescription(4, 'Click "Sign up" to register the user')
