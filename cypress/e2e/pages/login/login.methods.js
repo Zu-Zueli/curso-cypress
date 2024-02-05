@@ -1,4 +1,5 @@
 import { Logger } from "../../useful/logger";
+import { CommonPageMethods } from "../common-page/common.page.methods";
 import { LoginElements } from "./login.elements";
 
 //Clase LoginMethods: para clasificar todas las acciones posibles en la pagina de login
@@ -24,4 +25,9 @@ export class LoginMethods {
         Logger.subStep("Click on Login button")
         this.clickOnLoginButton()
      }
+
+     //Metodo para verificar el mensaje de contraseña incorrecta
+     static verifyLoginWrongPasswordMessage(){
+      CommonPageMethods.verifyAlert("Wrong password.")
+  }
 }
