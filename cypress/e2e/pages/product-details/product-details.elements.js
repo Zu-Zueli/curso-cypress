@@ -6,4 +6,8 @@ export class ProductDetailsElements{
             }
         }
     }
+
+    static productDetails(productName){
+        return cy.contains('h2', productName)
+    }
 }

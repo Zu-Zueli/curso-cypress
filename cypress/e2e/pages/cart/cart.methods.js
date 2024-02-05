@@ -7,4 +7,8 @@ export class CartMethods{
     static clickOnPaceOrderButton(){
         CartElements.buttons.placeOrder.click()
     }
+
+    static verifyProductAdded(productName){
+        CartElements.links.delete(productName).should("be.visible")
+    }
 }
