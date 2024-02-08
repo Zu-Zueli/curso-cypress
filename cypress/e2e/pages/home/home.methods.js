@@ -1,3 +1,4 @@
+import { CommonPageData } from "../common-page/common.page.data";
 import { HomeElements } from "./home.elements";
 
 export class HomeMethods{
@@ -16,5 +17,8 @@ export class HomeMethods{
 
     static virifyProductDisplayed(productName){
         HomeElements.product(productName).should("be.visible")
+    }
+    static verifyHomePageIsShown(){
+        cy.url().should('include', '/index.html')
     }
 }

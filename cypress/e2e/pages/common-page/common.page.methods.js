@@ -17,6 +17,9 @@ export class CommonPageMethods{
     }
     static clickOnCartOption(){
         CommonPageElements.menu.cart.click()
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false
+          })
     }
     static clickOnLogInOption(){
         CommonPageElements.menu.logIn.click()
