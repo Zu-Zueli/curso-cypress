@@ -18,7 +18,10 @@ export class CommonPageElements{
             },
             get signUp(){
                 return cy.get('#signin2')
-            }
+            },
+            get logOut(){
+                return cy.get('#logout2')
+            },
         }
     }
 

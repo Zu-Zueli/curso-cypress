@@ -17,6 +17,7 @@ export class CommonPageMethods{
     }
     static clickOnCartOption(){
         CommonPageElements.menu.cart.click()
+        //Omitir error que genera la pagina web
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false
           })
@@ -26,6 +27,14 @@ export class CommonPageMethods{
     }
     static clickOnSignUpOption(){
         CommonPageElements.menu.signUp.click()
+    }
+    static LogOut(){
+        //Si en el Body encuentras "Boton Log out" y que su longitud es mayor que 0 (o sea está visible) entonces hazle click
+        cy.get("body").then($body=>{
+            if($body.find('#logout2').length>0){
+                CommonPageElements.menu.logOut.click();
+            }
+        })
     }
     static verifyAlert(message){
         cy.on('window:alert', (str) => {

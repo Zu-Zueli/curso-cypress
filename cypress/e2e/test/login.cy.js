@@ -23,6 +23,9 @@ describe(CommonPageData.testSuites.logIn, () => {
 
         Logger.stepAndDescription(5, "Verify that the user is logged in")
         CommonPageMethods.verifySignedUser(LoginData.validCredentials.username)
+
+        Logger.postCondition("Log out")
+        CommonPageMethods.LogOut()
     })
 
     it("Invalid login", () => {
