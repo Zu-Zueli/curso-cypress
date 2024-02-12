@@ -19,10 +19,12 @@ export class CartMethods{
         cy.url().should('include', '/cart.html')
     }
 
+    //Cambiar cy.wait por esperar que cargue la API
     static deleteAllProducts(){
+        cy.intercept('POST', 'https://api.demoblaze.com/deleteitem').as('deleteItem')
         cy.get('a[onclick*="delete"]').each(link=>{
             link.click()
-            cy.wait(1000)
+            cy.wait('@deleteItem')
         })
     }
 
