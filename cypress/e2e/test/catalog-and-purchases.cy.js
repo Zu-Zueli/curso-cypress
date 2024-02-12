@@ -31,6 +31,9 @@ describe(CommonPageData.testSuites.catalogAndPurchases, ()=>{
         Logger.stepAndDescription(4, "Verify that the list of products corresponding to the category is displayed")
         HomeMethods.virifyProductDisplayed("Apple monitor 24")
         HomeMethods.virifyProductDisplayed("ASUS Full HD")
+
+        Logger.postCondition("Logout")
+        CommonPageMethods.LogOut()
     })
 
     it("Add Product to Cart", ()=>{
@@ -57,6 +60,10 @@ describe(CommonPageData.testSuites.catalogAndPurchases, ()=>{
         ProductDetailsMethods.verifyProductAddedMessage()
         CommonPageMethods.clickOnCartOption()
         CartMethods.verifyProductAdded(product)
+
+        Logger.postCondition("Empty cart and logout")
+        CartMethods.emptyCart(userValid.username, userValid.password)
+        CommonPageMethods.LogOut()
     })
 
     it("Make a Purchase", ()=>{
@@ -105,5 +112,8 @@ describe(CommonPageData.testSuites.catalogAndPurchases, ()=>{
         cy.wait(5000)
         SuccessfulPurchaseMethods.clickOnOkButton()
         HomeMethods.verifyHomePageIsShown()
+
+        Logger.postCondition("Logout")
+        CommonPageMethods.LogOut()
     })
 })

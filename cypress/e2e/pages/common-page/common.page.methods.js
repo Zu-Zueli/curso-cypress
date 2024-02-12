@@ -31,7 +31,7 @@ export class CommonPageMethods{
     static LogOut(){
         //Si en el Body encuentras "Boton Log out" y que su longitud es mayor que 0 (o sea está visible) entonces hazle click
         cy.get("body").then($body=>{
-            if($body.find('#logout2').length>0){
+            if($body.find('#logout2[style="display: block;"]').length>0){
                 CommonPageElements.menu.logOut.click();
             }
         })
