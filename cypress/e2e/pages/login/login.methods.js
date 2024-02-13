@@ -24,6 +24,8 @@ export class LoginMethods {
         this.insertPassword(password)
         Logger.subStep("Click on Login button")
         this.clickOnLoginButton()
+        cy.intercept('POST', 'https://api.demoblaze.com/check').as('check')
+        cy.wait('@check')
      }
 
      //Metodo para verificar el mensaje de contraseña incorrecta

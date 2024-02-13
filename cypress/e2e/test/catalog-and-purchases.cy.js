@@ -1,4 +1,3 @@
-import { CartElements } from "../pages/cart/cart.elements";
 import { CartMethods } from "../pages/cart/cart.methods";
 import { CommonPageData } from "../pages/common-page/common.page.data";
 import { CommonPageMethods } from "../pages/common-page/common.page.methods";
@@ -108,8 +107,6 @@ describe(CommonPageData.testSuites.catalogAndPurchases, ()=>{
         
         Logger.stepAndDescription(12, "Verify that a confirmation message is displayed and the user is redirected to the home page")
         SuccessfulPurchaseMethods.verifyGreenCheckMarckIsDisplayed()
-        //BORRAR
-        cy.wait(5000)
         SuccessfulPurchaseMethods.clickOnOkButton()
         HomeMethods.verifyHomePageIsShown()
 

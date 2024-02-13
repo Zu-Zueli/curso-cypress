@@ -1,5 +1,4 @@
 import { Logger } from "../../useful/logger";
-import { PlaceOrderData } from "./place.order.data";
 import { PlaceOrderElements } from "./place.order.elements";
 
 export class PlaceOrderMethods{
@@ -26,6 +25,8 @@ export class PlaceOrderMethods{
     }
     static clickOnPurchaseButton(){
         PlaceOrderElements.buttons.purchase.click()
+        cy.intercept('POST', 'https://api.demoblaze.com/deletecart').as('deletecart')
+        cy.wait('@deletecart')
     }
 
     static insertOrderInformation(data){
