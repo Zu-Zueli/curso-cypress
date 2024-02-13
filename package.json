@@ -8,10 +8,11 @@
     "ejecutar-pruebas": "cypress run --headed --env allure=true",
     "generar-reporte": "allure generate allure-results -o allure-report --clean",
     "abrir-reporte": "allure open",
-    "test": "npm run limpiar-reporte && npm run ejecutar-pruebas & npm run generar-reporte && npm run abrir-reporte"
+    "test": "npm run limpiar-reporte && npm run ejecutar-pruebas & npm run generar-reporte && npm run abrir-reporte",
+    "cy:parallel" : "npm run limpiar-reporte && cypress-parallel -s ejecutar-pruebas -t 2 -d ./cypress/e2e/test & npm run generar-reporte"
   },
   "keywords": [],
-  "author": "",
+  "author": "Zueli",
   "license": "ISC",
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "^2.40.1"
@@ -19,6 +20,7 @@
   "dependencies": {
     "@mmisty/cypress-allure-adapter": "^0.16.2",
     "allure-commandline": "^2.26.0",
-    "cypress": "^12.13.0"
+    "cypress": "^12.13.0",
+    "cypress-parallel": "^0.14.0"
   }
 }
