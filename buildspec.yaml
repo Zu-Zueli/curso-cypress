@@ -7,5 +7,5 @@ phases:
     commands:
       - npm install
   build:
-    comands:
-      -npm run cy:parallel
+    commands:
+      - npm run cy:parallel
